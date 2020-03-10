@@ -1,0 +1,8 @@
+{
+  "watch": ["src/", "config/"],
+  "ignore": ["test/**/*.test.ts", "docs/*"],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "ts,js,json"
+}

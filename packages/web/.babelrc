@@ -1,0 +1,22 @@
+{
+  "presets": ["next/babel"],
+
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@actions": "./src/actions",
+          "@api": "./src/api",
+          "@assets": "./src/assets",
+          "@components": "./src/components",
+          "@errors": "./src/errors",
+          "@reducers": "./src/reducers",
+          "@redux": "./src/redux",
+          "@sagas": "./src/sagas"
+        }
+      }
+    ]
+  ]
+}

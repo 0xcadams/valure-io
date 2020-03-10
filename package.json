@@ -1,0 +1,98 @@
+{
+  "name": "valure",
+  "description": "Valure makes vacation rentals simple. Get an instant quote and avoid the hassle of property management.",
+  "private": true,
+  "homepage": "https://valure.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chase-adams/valure.git"
+  },
+  "engines": {
+    "node": ">=12.x"
+  },
+  "contributors": [
+    "Chase Adams (https://cadams.io)"
+  ],
+  "keywords": [
+    "commitizen",
+    "cypress",
+    "feathersjs",
+    "lerna",
+    "now",
+    "redux-saga",
+    "redux",
+    "material-ui",
+    "typescript"
+  ],
+  "bugs": {
+    "url": "https://github.com/chase-adams/valure/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn build:core && lerna run build --stream",
+    "build:core": "lerna run build --stream --scope @valure/core",
+    "clean": "lerna clean",
+    "commit": "npx git-cz",
+    "fix": "lerna run lint --stream -- --fix",
+    "lint": "lerna run lint --stream",
+    "postinstall": "yarn build:core",
+    "release": "lerna version --conventional-commits --github-release --yes",
+    "start": "lerna run start --stream",
+    "start:now": "now dev",
+    "test:integration": "lerna run test:integration --stream",
+    "test:integration:open": "lerna run test:integration:open --stream",
+    "test": "lerna run test --stream"
+  },
+  "dependencies": {
+    "mongoose": "^5.7.7"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@types/chai": "^4.1.7",
+    "@types/dotenv": "^6.1.1",
+    "@types/mocha": "^7.0.1",
+    "@types/mongoose": "^5.5.28",
+    "@types/node": "^13.1.0",
+    "@types/uuid": "^3.4.5",
+    "chai": "^4.2.0",
+    "cross-env": "^6.0.3",
+    "cz-conventional-changelog": "3.1.0",
+    "dotenv": "^8.2.0",
+    "husky": "3.1.0",
+    "lerna": "3.20.0",
+    "mocha": "^6.0.2",
+    "nodemon": "^2.0.0",
+    "now": "^17.0.3",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.20.1",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react-hooks": "^2.2.1",
+    "typescript": "^3.7.4",
+    "uuid": "^3.3.3"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "yarn lint"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "singleQuote": true
+  }
+}

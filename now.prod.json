@@ -1,0 +1,71 @@
+{
+  "version": 2,
+  "scope": "valure",
+  "env": {
+    "FEATHERS_AUTH_SECRET": "@valure-prod_authentication-secret",
+    "JWT_AUDIENCE": "https://valure.io",
+    "MONGODB_URL": "@valure-prod_mongodb-url",
+    "NODE_ENV": "production",
+    "SENDGRID_API_KEY": "@valure-prod_sendgrid-api-key",
+    "SENTRY_DSN_API": "@valure-prod_sentry-dsn-api",
+    "SUPPORT_EMAIL": "support@valure.io"
+  },
+  "build": {
+    "env": {
+      "GOOGLE_ANALYTICS_ID": "UA-159823573-1",
+      "SENTRY_DSN_WEB": "@valure-prod_sentry-dsn-web"
+    }
+  },
+  "routes": [
+    {
+      "src": "/socket.io/(.*)",
+      "dest": "packages/api/src/app.ts"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "packages/api/src/app.ts"
+    },
+    {
+      "src": "^/service-worker.js$",
+      "dest": "/packages/web/_next/service-worker.js",
+      "headers": {
+        "cache-control": "public, max-age=43200, immutable",
+        "service-worker-allowed": "/"
+      }
+    },
+    {
+      "src": "/(_next/static/.*)",
+      "dest": "/packages/web/$1",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/micromarket/(.*)",
+      "dest": "/packages/web/micromarket/[id]",
+      "headers": {
+        "cache-control": "no-cache"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/packages/web/$1",
+      "headers": {
+        "cache-control": "no-cache"
+      }
+    }
+  ],
+  "builds": [
+    {
+      "src": "packages/api/src/app.ts",
+      "use": "@now/node",
+      "config": {
+        "includeFiles": ["packages/api/src/emails/**"]
+      }
+    },
+    {
+      "src": "packages/web/next.config.js",
+      "use": "@now/next"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "lerna": "3.18.3",
+  "packages": ["packages/*"],
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "version": {
+      "allowBranch": "master",
+      "message": "chore(release): updated release notes and package versions"
+    }
+  }
+}

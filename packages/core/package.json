@@ -1,0 +1,19 @@
+{
+  "name": "@valure/core",
+  "version": "0.0.1",
+  "description": "Library to share code between valure modules.",
+  "private": true,
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc -p .",
+    "lint": "tslint -p . -c ../../tslint.json 'src/**/*.ts'"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.4",
+    "@types/mocha": "^7.0.1",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2"
+  },
+  "dependencies": {}
+}
