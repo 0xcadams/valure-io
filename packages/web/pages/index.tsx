@@ -1,17 +1,17 @@
 import * as React from 'react';
 
 import {
-  createStyles,
+  Button,
   // Paper,
+  createStyles,
   Theme,
   Typography,
   WithStyles,
-  withStyles,
-  Button
+  withStyles
 } from '@material-ui/core';
 
-import MainAnimation from '@components/MainAnimation';
 import Link from '@components/Link';
+import MainAnimation from '@components/MainAnimation';
 // import SearchAutocomplete from '@components/SearchAutocomplete';
 
 const styles = (theme: Theme) =>

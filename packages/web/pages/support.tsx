@@ -13,8 +13,8 @@ import {
 } from '@material-ui/core';
 
 import * as SupportRequestActions from '@actions/SupportRequestActions';
-import { ISupportRequest } from '@valure/core';
 import { IStore, ISupportRequestState, IUserState } from '@reducers';
+import { ISupportRequest } from '@valure/core';
 
 const mapDispatchToProps = {
   createSupportRequest: SupportRequestActions.createSupportRequest.request
