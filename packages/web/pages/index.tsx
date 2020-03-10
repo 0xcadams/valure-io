@@ -82,7 +82,7 @@ const HomePage: React.FC<IProps> = ({ classes }) => {
           <Typography variant="h3" gutterBottom className={classes.title}>
             Software consulting,
             <br />
-            for humans
+            for everyone
           </Typography>
           <Typography variant="h5" className={classes.subtitle}>
             Valure is a group of highly talented software engineers with years
