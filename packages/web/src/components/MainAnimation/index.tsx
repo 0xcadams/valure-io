@@ -1076,34 +1076,34 @@ const MainAnimation: React.FC<IProps> = ({ classes }) => {
         />
       </g>
       <text
-        transform="matrix(1 0 0 1 122 1200.5889)"
+        transform="matrix(1 0 0 1 80 1200.5889)"
         font-family="'CampaignRegular'"
         font-size="44px"
       >
         {'Excellence as minimum'}
       </text>
       <text
-        transform={`matrix(1 0 0 1 122 ${1275})`}
+        transform={`matrix(1 0 0 1 80 ${1275})`}
         font-family="'FuturaPT-Book'"
         font-size="26px"
       >
-        We take pride in the projects we engage on - always striving to build
+        We take pride in the projects we engage on - striving to build
         maintainable
       </text>
       <text
-        transform={`matrix(1 0 0 1 122 ${1275 + 40})`}
+        transform={`matrix(1 0 0 1 80 ${1275 + 40})`}
         font-family="'FuturaPT-Book'"
         font-size="26px"
       >
-        applications with modern, future-proof technologies. We typically employ
-        MongoDB,
+        applications using modern, future-proof technologies. We typically
+        employ React,
       </text>
       <text
-        transform={`matrix(1 0 0 1 122 ${1275 + 40 * 2})`}
+        transform={`matrix(1 0 0 1 80 ${1275 + 40 * 2})`}
         font-family="'FuturaPT-Book'"
         font-size="26px"
       >
-        Express, and React, but are comfortable with any modern technologies.
+        MongoDB, and NodeJS, but comfortable with any modern technologies.
       </text>
 
       <text
@@ -1118,22 +1118,23 @@ const MainAnimation: React.FC<IProps> = ({ classes }) => {
         font-family="'FuturaPT-Book'"
         font-size="26px"
       >
-        We are primarily based in Denver, Colorado with a highly advanced,
+        We are based in Phoenix, Arizona with a highly advanced, tight-knit
+        group
       </text>
       <text
         transform={`matrix(1 0 0 1 40 ${2255 + 40})`}
         font-family="'FuturaPT-Book'"
         font-size="26px"
       >
-        tight-knit group of excellent engineers. Effective and clear
-        communication
+        of engineers, designers, and intentionally diverse minds. Effective and
+        clear
       </text>
       <text
         transform={`matrix(1 0 0 1 40 ${2255 + 40 * 2})`}
         font-family="'FuturaPT-Book'"
         font-size="26px"
       >
-        is our number one priority.
+        communication is our number one priority.
       </text>
     </svg>
   );

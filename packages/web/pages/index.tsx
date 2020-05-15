@@ -80,14 +80,14 @@ const HomePage: React.FC<IProps> = ({ classes }) => {
       <div className={classes.root}>
         <div className={classes.landingContainer}>
           <Typography variant="h3" gutterBottom className={classes.title}>
-            Software consulting,
+            Beautiful software,
             <br />
             for everyone
           </Typography>
           <Typography variant="h5" className={classes.subtitle}>
-            Valure is a group of highly talented software engineers with years
-            of industry experience. Receive an instant quote and avoid the
-            hassle of finding amazing talent.
+            Valure is comprised of a group of highly talented software engineers
+            with years of industry experience. Receive an instant quote and
+            avoid the hassle of finding amazing talent.
           </Typography>
 
           <Link href="/contact">

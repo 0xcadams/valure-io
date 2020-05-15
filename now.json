@@ -2,10 +2,12 @@
   "version": 2,
   "scope": "valure",
   "env": {
+    "FEATHERS_AUTH_SECRET": "@valure-prod_authentication-secret",
     "JWT_AUDIENCE": "https://valure.now.sh",
-
+    "MONGODB_URL": "@valure-prod_mongodb-url",
     "NODE_ENV": "production",
-
+    "SENDGRID_API_KEY": "@valure-prod_sendgrid-api-key",
+    "SENTRY_DSN_API": "@valure-prod_sentry-dsn-api",
     "SUPPORT_EMAIL": "support@valure.io"
   },
   "build": {
