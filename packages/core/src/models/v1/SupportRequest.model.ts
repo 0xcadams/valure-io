@@ -1,10 +1,9 @@
 import * as mongoose from 'mongoose';
-import { IUser } from './User.model';
 
 export interface ISupportRequest {
   issue: string;
   type: 'support' | 'feedback';
-  user?: IUser | string;
+  email: string;
 }
 
 const supportRequestSchema = new mongoose.Schema(
@@ -17,9 +16,9 @@ const supportRequestSchema = new mongoose.Schema(
       type: String,
       index: true
     },
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User'
+    email: {
+      type: String,
+      index: true
     }
   },
   {

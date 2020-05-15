@@ -1,10 +1,10 @@
 <div align="center">
-  <img src="packages/web/src/assets/svgs/valure-full-logo.png" width="200" title="Valure">
+  <img src="packages/web/public/email/top-logo.png" width="200" title="Valure">
   <h3>
-    Valure makes vacation rentals simple. Get an instant quote and avoid the hassle of property management.
+    Valure is comprised of a group of highly talented software engineers, designers, and project managers with years of industry experience.
   </h3>
 
-  <h2></h2>
+  <h4>Built from <a href="https://github.com/chase-adams/accelerate-starter">Accelerate</a>.</h4>
   <div>
     <strong>Web</strong>
     <br />
@@ -91,26 +91,6 @@ yarn start
 ```
 
 To learn more about Feathers, visit [feathersjs.com](http://feathersjs.com) or jump right into [the Feathers docs](http://docs.feathersjs.com).
-
-## Project Structure
-
-_Further design decisions/walkthrough of project structure is under coming soon..._
-
-```bash
-now secret add valure-stage_authentication-secret "*****"
-now secret add valure-prod_authentication-secret  "*****"
-
-now secret add valure-stage_mongodb-url "mongodb+srv://***"
-now secret add valure-prod_mongodb-url "mongodb+srv://***"
-
-now secret add valure-stage_sendgrid-api-key "SG.****"
-now secret add valure-prod_sendgrid-api-key "SG.****"
-
-now dns add valure.io '@' MX mx1.forwardemail.net 10
-now dns add valure.io '@' MX mx2.forwardemail.net 20
-now dns add valure.io '@' TXT forward-email=c@cadams.io
-now dns add valure.io '@' TXT "v=spf1 a mx include:spf.forwardemail.net -all"
-```
 
 ## Design Decisions
 

@@ -1,11 +1,10 @@
 import { disallow } from 'feathers-hooks-common';
-import { addUserInfo } from './hooks/add-user-info';
 import { sendEmailToSupport } from './hooks/send-email-to-support';
 
 const hooks = {
   before: {
     all: [],
-    create: [sendEmailToSupport(), addUserInfo()],
+    create: [sendEmailToSupport()],
     find: [disallow()],
     get: [disallow()],
     patch: [disallow()],

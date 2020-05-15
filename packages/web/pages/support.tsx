@@ -69,7 +69,11 @@ const SupportPage: React.FC<IProps> = ({
 
   const onFormSubmit = () => {
     if (user) {
-      const supportRequest: ISupportRequest = { issue, type: 'support' };
+      const supportRequest: ISupportRequest = {
+        issue,
+        email: user.email,
+        type: 'support'
+      };
       createSupportRequest(supportRequest);
     }
   };

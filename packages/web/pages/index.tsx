@@ -58,13 +58,13 @@ const styles = (theme: Theme) =>
         marginTop: theme.spacing(20)
       },
       [theme.breakpoints.between(500, 700)]: {
-        marginTop: theme.spacing(2)
+        marginTop: theme.spacing(10)
       },
       [theme.breakpoints.between(700, 900)]: {
-        marginTop: 0
+        marginTop: theme.spacing(4)
       },
       [theme.breakpoints.between(900, 1200)]: {
-        marginTop: -theme.spacing(10)
+        marginTop: -theme.spacing(8)
       },
       [theme.breakpoints.up(1200)]: {
         marginTop: -theme.spacing(28)
