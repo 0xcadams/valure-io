@@ -85,9 +85,10 @@ const HomePage: React.FC<IProps> = ({ classes }) => {
             for everyone
           </Typography>
           <Typography variant="h5" className={classes.subtitle}>
-            Valure is comprised of a group of highly talented software engineers
-            with years of industry experience. Receive an instant quote and
-            avoid the hassle of finding amazing talent.
+            Valure is comprised of a group of highly talented software
+            engineers, designers, and project managers with years of industry
+            experience. Receive an instant quote and avoid the hassle of finding
+            amazing talent.
           </Typography>
 
           <Link href="/contact">

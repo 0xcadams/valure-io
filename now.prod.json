@@ -12,7 +12,7 @@
   },
   "build": {
     "env": {
-      "GOOGLE_ANALYTICS_ID": "UA-159823573-1",
+      "GOOGLE_ANALYTICS_ID": "UA-166847423-1",
       "SENTRY_DSN_WEB": "@valure-prod_sentry-dsn-web"
     }
   },
