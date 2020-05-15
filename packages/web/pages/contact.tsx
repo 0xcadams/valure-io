@@ -7,10 +7,15 @@ import {
   Paper,
   TextField,
   Theme,
+  InputAdornment,
   Typography,
   WithStyles,
   withStyles
 } from '@material-ui/core';
+
+import { EmailRounded } from '@material-ui/icons';
+
+import * as emailValidator from 'email-validator';
 
 import * as SupportRequestActions from '@actions/SupportRequestActions';
 
@@ -64,13 +69,30 @@ const ContactUsPage: React.FC<IProps> = ({
   classes,
   createSupportRequest,
   supportRequest,
-  user: { isFetching, user }
+  user: { isFetching }
 }) => {
   const [issue, setIssue] = React.useState('');
+  const [email, setEmail] = React.useState({ value: '', error: '' });
 
   const onFormSubmit = () => {
-    const supportRequest: ISupportRequest = { issue, user, type: 'support' };
+    const supportRequest: ISupportRequest = {
+      issue,
+      email: email.value,
+      type: 'support'
+    };
     createSupportRequest(supportRequest);
+  };
+
+  const onChangeEmail = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    event.preventDefault();
+
+    const newEmail = event.target.value;
+    const isEmailValid = emailValidator.validate(newEmail);
+
+    setEmail({
+      error: !isEmailValid ? 'Email must be valid.' : '',
+      value: newEmail
+    });
   };
 
   return (
@@ -104,6 +126,26 @@ const ContactUsPage: React.FC<IProps> = ({
                   consulting needs and we will contact you within 24 hours.
                 </Typography>
                 <TextField
+                  error={Boolean(email.error)}
+                  id="contact-email"
+                  label="What email can we use to contact you?"
+                  className={classes.textField}
+                  value={email.value}
+                  type="email"
+                  fullWidth
+                  onChange={onChangeEmail}
+                  margin="normal"
+                  variant="outlined"
+                  disabled={isFetching}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <EmailRounded />
+                      </InputAdornment>
+                    )
+                  }}
+                />
+                <TextField
                   id="contact-issue"
                   label="What request(s) do you have?"
                   className={classes.textField}
@@ -123,6 +165,8 @@ const ContactUsPage: React.FC<IProps> = ({
                   color="primary"
                   variant="contained"
                   disabled={
+                    !email.value ||
+                    Boolean(email.error) ||
                     !Boolean(issue && issue.length > 10) ||
                     isFetching ||
                     supportRequest.isFetching

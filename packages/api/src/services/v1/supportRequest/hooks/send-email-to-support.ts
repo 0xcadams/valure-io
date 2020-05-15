@@ -1,13 +1,11 @@
 import { HookContext } from '@feathersjs/feathers';
-import { ISupportRequest, IUser } from '@valure/core';
+import { ISupportRequest } from '@valure/core';
 
 import { sendSupportMail } from '../../../../mailer';
 
 const sendEmailToSupport = () => async (context: HookContext) => {
   const { params } = context;
   const supportRequest: ISupportRequest = context.data;
-
-  const user: IUser = context.data.user;
 
   const origin =
     context.params.headers && context.params.headers.origin
@@ -19,7 +17,7 @@ const sendEmailToSupport = () => async (context: HookContext) => {
     type: supportRequest.type,
     issue: supportRequest.issue,
     email:
-      (user && user.email) ||
+      supportRequest.email ||
       (params && params.clientIp && String(params.clientIp)) ||
       'Anonymous'
   });

@@ -68,8 +68,14 @@ const FeedbackPage: React.FC<IProps> = ({
   const [issue, setIssue] = React.useState('');
 
   const onFormSubmit = () => {
-    const supportRequest: ISupportRequest = { issue, user, type: 'feedback' };
-    createSupportRequest(supportRequest);
+    if (user?.email) {
+      const supportRequest: ISupportRequest = {
+        issue,
+        email: user.email,
+        type: 'feedback'
+      };
+      createSupportRequest(supportRequest);
+    }
   };
 
   return (
