@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import {
   Button,
   createStyles,
+  InputAdornment,
   Paper,
   TextField,
   Theme,
-  InputAdornment,
   Typography,
   WithStyles,
   withStyles
