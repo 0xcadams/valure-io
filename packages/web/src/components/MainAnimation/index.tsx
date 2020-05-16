@@ -29,6 +29,11 @@ const MainAnimation: React.FC<IProps> = ({ classes }) => {
 
   return (
     <svg className={classes.svg} viewBox="0 0 1366 2850">
+      <defs>
+        <style type="text/css">
+          @import url("https://use.typekit.net/zer2jbo.css");
+        </style>
+      </defs>
       <g id="Layer_21">
         <g>
           <path
@@ -1077,14 +1082,14 @@ const MainAnimation: React.FC<IProps> = ({ classes }) => {
       </g>
       <text
         transform="matrix(1 0 0 1 80 1200.5889)"
-        font-family="'CampaignRegular'"
+        font-family="campaign, sans-serif"
         font-size="44px"
       >
         {'Excellence as minimum'}
       </text>
       <text
         transform={`matrix(1 0 0 1 80 ${1275})`}
-        font-family="'FuturaPT-Book'"
+        font-family="futura-pt"
         font-size="26px"
       >
         We take pride in the projects we engage on - striving to build
@@ -1092,7 +1097,7 @@ const MainAnimation: React.FC<IProps> = ({ classes }) => {
       </text>
       <text
         transform={`matrix(1 0 0 1 80 ${1275 + 40})`}
-        font-family="'FuturaPT-Book'"
+        font-family="futura-pt"
         font-size="26px"
       >
         applications using modern, future-proof technologies. We typically
@@ -1100,7 +1105,7 @@ const MainAnimation: React.FC<IProps> = ({ classes }) => {
       </text>
       <text
         transform={`matrix(1 0 0 1 80 ${1275 + 40 * 2})`}
-        font-family="'FuturaPT-Book'"
+        font-family="futura-pt"
         font-size="26px"
       >
         MongoDB, and NodeJS, but comfortable with any modern technologies.
@@ -1108,14 +1113,14 @@ const MainAnimation: React.FC<IProps> = ({ classes }) => {
 
       <text
         transform="matrix(1 0 0 1 40 2180)"
-        font-family="'CampaignRegular'"
+        font-family="campaign, sans-serif"
         font-size="44px"
       >
         Dependable communication
       </text>
       <text
         transform={`matrix(1 0 0 1 40 ${2255})`}
-        font-family="'FuturaPT-Book'"
+        font-family="futura-pt"
         font-size="26px"
       >
         We are based in Phoenix, Arizona with a highly advanced, tight-knit
@@ -1123,7 +1128,7 @@ const MainAnimation: React.FC<IProps> = ({ classes }) => {
       </text>
       <text
         transform={`matrix(1 0 0 1 40 ${2255 + 40})`}
-        font-family="'FuturaPT-Book'"
+        font-family="futura-pt"
         font-size="26px"
       >
         of engineers, designers, and intentionally diverse minds. Effective and
@@ -1131,7 +1136,7 @@ const MainAnimation: React.FC<IProps> = ({ classes }) => {
       </text>
       <text
         transform={`matrix(1 0 0 1 40 ${2255 + 40 * 2})`}
-        font-family="'FuturaPT-Book'"
+        font-family="futura-pt"
         font-size="26px"
       >
         communication is our number one priority.
