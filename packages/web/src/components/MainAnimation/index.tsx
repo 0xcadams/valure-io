@@ -29,11 +29,6 @@ const MainAnimation: React.FC<IProps> = ({ classes }) => {
 
   return (
     <svg className={classes.svg} viewBox="0 0 1366 2850">
-      <defs>
-        <style type="text/css">
-          @import url("https://use.typekit.net/zer2jbo.css");
-        </style>
-      </defs>
       <g id="Layer_21">
         <g>
           <path
