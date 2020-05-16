@@ -91,7 +91,7 @@ const Layout: React.FC<IProps> = ({ children, isMobile }) => {
   }, []);
 
   const description =
-    'Valure makes vacation rentals simple. Get an instant quote and avoid the hassle of property management.';
+    'Beautiful software, for everyone. Receive an instant quote for your project and avoid the hassle of finding amazing talent.';
 
   return (
     <>
