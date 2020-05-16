@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import {
   Button,
-  // Paper,
   createStyles,
+  Grid,
   Theme,
   Typography,
   WithStyles,
@@ -12,7 +12,10 @@ import {
 
 import Link from '@components/Link';
 import MainAnimation from '@components/MainAnimation';
-// import SearchAutocomplete from '@components/SearchAutocomplete';
+
+import { default as asuLogo } from '@assets/images/asu_logo.png';
+import { default as hcpLogo } from '@assets/images/hcp_logo.png';
+import { default as impactiLogo } from '@assets/images/impacti_logo.png';
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -41,13 +44,13 @@ const styles = (theme: Theme) =>
       maxWidth: 520,
       marginBottom: theme.spacing(4)
     },
-    searchPaper: {
-      position: 'relative',
-      marginTop: theme.spacing(7),
-      maxWidth: 550,
-      [theme.breakpoints.down('sm')]: {
-        marginTop: theme.spacing(5)
-      }
+
+    trusted: {
+      maxWidth: 520,
+      marginTop: theme.spacing(4)
+    },
+    trustedImages: {
+      paddingTop: theme.spacing(2)
     },
 
     svgContainer: {
@@ -74,6 +77,21 @@ const styles = (theme: Theme) =>
 
 type IProps = WithStyles<typeof styles>;
 
+const images: { image: string; href: string }[] = [
+  {
+    image: impactiLogo,
+    href: 'https://impacti.solutions'
+  },
+  {
+    image: asuLogo,
+    href: 'https://decisioncenter.asu.edu'
+  },
+  {
+    image: hcpLogo,
+    href: 'https://homecareplusllc.com'
+  }
+];
+
 const HomePage: React.FC<IProps> = ({ classes }) => {
   return (
     <>
@@ -96,6 +114,27 @@ const HomePage: React.FC<IProps> = ({ classes }) => {
               Get a quote
             </Button>
           </Link>
+
+          <div className={classes.trusted}>
+            <Typography variant="h6" align="left">
+              Trusted by:
+            </Typography>
+
+            <Grid
+              className={classes.trustedImages}
+              container
+              justify="flex-start"
+              spacing={4}
+            >
+              {images.map((value) => (
+                <Grid key={value.href} item>
+                  <a target="_blank" href={value.href}>
+                    <img height={50} src={value.image} />
+                  </a>
+                </Grid>
+              ))}
+            </Grid>
+          </div>
         </div>
       </div>
 
