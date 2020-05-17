@@ -1080,23 +1080,22 @@ const MainAnimation: React.FC<IProps> = ({ classes }) => {
         font-family="campaign, sans-serif"
         font-size="44px"
       >
-        {'Excellence as minimum'}
+        {'Driven by excellence'}
       </text>
       <text
         transform={`matrix(1 0 0 1 80 ${1275})`}
         font-family="futura-pt"
         font-size="26px"
       >
-        We take pride in the projects we engage on - striving to build
-        maintainable
+        We take pride in the projects we engage on - building maintainable
+        applications
       </text>
       <text
         transform={`matrix(1 0 0 1 80 ${1275 + 40})`}
         font-family="futura-pt"
         font-size="26px"
       >
-        applications using modern, future-proof technologies. We typically
-        employ React,
+        using modern, future-proof technologies. We typically employ React,
       </text>
       <text
         transform={`matrix(1 0 0 1 80 ${1275 + 40 * 2})`}

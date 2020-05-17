@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import {
   Button,
-  // Paper,
   createStyles,
+  Grid,
   Theme,
   Typography,
   WithStyles,
@@ -12,7 +12,10 @@ import {
 
 import Link from '@components/Link';
 import MainAnimation from '@components/MainAnimation';
-// import SearchAutocomplete from '@components/SearchAutocomplete';
+
+import { default as asuLogo } from '@assets/images/asu_logo.png';
+import { default as hcpLogo } from '@assets/images/hcp_logo.png';
+import { default as impactiLogo } from '@assets/images/impacti_logo.png';
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -41,12 +44,23 @@ const styles = (theme: Theme) =>
       maxWidth: 520,
       marginBottom: theme.spacing(4)
     },
-    searchPaper: {
-      position: 'relative',
-      marginTop: theme.spacing(7),
-      maxWidth: 550,
-      [theme.breakpoints.down('sm')]: {
-        marginTop: theme.spacing(5)
+
+    trusted: {
+      maxWidth: 520,
+      marginTop: theme.spacing(3)
+    },
+    trustedText: {
+      fontSize: '14px'
+    },
+    trustedImages: {
+      paddingTop: theme.spacing(1),
+      opacity: 0.85
+    },
+    trustedImage: {
+      height: 50,
+
+      [theme.breakpoints.down(750)]: {
+        height: 35
       }
     },
 
@@ -54,25 +68,49 @@ const styles = (theme: Theme) =>
       overflowX: 'hidden',
       marginTop: theme.spacing(4),
 
-      [theme.breakpoints.down(500)]: {
-        marginTop: theme.spacing(20)
+      [theme.breakpoints.down(350)]: {
+        marginTop: theme.spacing(62)
       },
-      [theme.breakpoints.between(500, 700)]: {
-        marginTop: theme.spacing(10)
+      [theme.breakpoints.between(350, 400)]: {
+        marginTop: theme.spacing(50)
+      },
+      [theme.breakpoints.between(400, 500)]: {
+        marginTop: theme.spacing(30)
+      },
+      [theme.breakpoints.between(500, 600)]: {
+        marginTop: theme.spacing(14)
+      },
+      [theme.breakpoints.between(600, 700)]: {
+        marginTop: theme.spacing(24)
       },
       [theme.breakpoints.between(700, 900)]: {
-        marginTop: theme.spacing(4)
+        marginTop: theme.spacing(16)
       },
       [theme.breakpoints.between(900, 1200)]: {
-        marginTop: -theme.spacing(8)
+        marginTop: theme.spacing(2)
       },
       [theme.breakpoints.up(1200)]: {
-        marginTop: -theme.spacing(28)
+        marginTop: -theme.spacing(22)
       }
     }
   });
 
 type IProps = WithStyles<typeof styles>;
+
+const images: { image: string; href: string }[] = [
+  {
+    image: impactiLogo,
+    href: 'https://impacti.solutions'
+  },
+  {
+    image: asuLogo,
+    href: 'https://decisioncenter.asu.edu'
+  },
+  {
+    image: hcpLogo,
+    href: 'https://homecareplusllc.com'
+  }
+];
 
 const HomePage: React.FC<IProps> = ({ classes }) => {
   return (
@@ -96,6 +134,32 @@ const HomePage: React.FC<IProps> = ({ classes }) => {
               Get a quote
             </Button>
           </Link>
+
+          <div className={classes.trusted}>
+            <Typography
+              className={classes.trustedText}
+              variant="overline"
+              display="block"
+              align="left"
+            >
+              Trusted by
+            </Typography>
+
+            <Grid
+              className={classes.trustedImages}
+              container
+              justify="flex-start"
+              spacing={4}
+            >
+              {images.map((value) => (
+                <Grid key={value.href} item>
+                  <a target="_blank" href={value.href}>
+                    <img className={classes.trustedImage} src={value.image} />
+                  </a>
+                </Grid>
+              ))}
+            </Grid>
+          </div>
         </div>
       </div>
 
