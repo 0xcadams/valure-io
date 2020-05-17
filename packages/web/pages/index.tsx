@@ -47,30 +47,50 @@ const styles = (theme: Theme) =>
 
     trusted: {
       maxWidth: 520,
-      marginTop: theme.spacing(4)
+      marginTop: theme.spacing(3)
+    },
+    trustedText: {
+      fontSize: '14px'
     },
     trustedImages: {
-      paddingTop: theme.spacing(2)
+      paddingTop: theme.spacing(1),
+      opacity: 0.85
+    },
+    trustedImage: {
+      height: 50,
+
+      [theme.breakpoints.down(750)]: {
+        height: 35
+      }
     },
 
     svgContainer: {
       overflowX: 'hidden',
       marginTop: theme.spacing(4),
 
-      [theme.breakpoints.down(500)]: {
-        marginTop: theme.spacing(20)
+      [theme.breakpoints.down(350)]: {
+        marginTop: theme.spacing(62)
       },
-      [theme.breakpoints.between(500, 700)]: {
-        marginTop: theme.spacing(10)
+      [theme.breakpoints.between(350, 400)]: {
+        marginTop: theme.spacing(50)
+      },
+      [theme.breakpoints.between(400, 500)]: {
+        marginTop: theme.spacing(30)
+      },
+      [theme.breakpoints.between(500, 600)]: {
+        marginTop: theme.spacing(14)
+      },
+      [theme.breakpoints.between(600, 700)]: {
+        marginTop: theme.spacing(24)
       },
       [theme.breakpoints.between(700, 900)]: {
-        marginTop: theme.spacing(4)
+        marginTop: theme.spacing(16)
       },
       [theme.breakpoints.between(900, 1200)]: {
-        marginTop: -theme.spacing(8)
+        marginTop: theme.spacing(2)
       },
       [theme.breakpoints.up(1200)]: {
-        marginTop: -theme.spacing(28)
+        marginTop: -theme.spacing(22)
       }
     }
   });
@@ -116,8 +136,13 @@ const HomePage: React.FC<IProps> = ({ classes }) => {
           </Link>
 
           <div className={classes.trusted}>
-            <Typography variant="h6" align="left">
-              Trusted by:
+            <Typography
+              className={classes.trustedText}
+              variant="overline"
+              display="block"
+              align="left"
+            >
+              Trusted by
             </Typography>
 
             <Grid
@@ -129,7 +154,7 @@ const HomePage: React.FC<IProps> = ({ classes }) => {
               {images.map((value) => (
                 <Grid key={value.href} item>
                   <a target="_blank" href={value.href}>
-                    <img height={50} src={value.image} />
+                    <img className={classes.trustedImage} src={value.image} />
                   </a>
                 </Grid>
               ))}
